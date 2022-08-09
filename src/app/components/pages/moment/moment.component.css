@@ -17,17 +17,24 @@ img {
   margin-bottom: 0 auto 1rem;
 }
 
-.about-moment, .action {
-  padding-bottom: 1rem;
+.about-moment, .actions {
   border-bottom: 1px solid #CCC;
   padding: 1.2rem;
+  width: 50%;
 }
 
 .actions {
   background-color: #EEE;
+  padding: 1rem;
 }
 
 .coments {
   margin-bottom: 1rem;
   padding: 1.5rem 0;
+}
+
+.about-moment h3,
+.actions h3,
+.coments {
+  margin-bottom: 1rem;
 }
