@@ -31,10 +31,40 @@ img {
 .coments {
   margin-bottom: 1rem;
   padding: 1.5rem 0;
+  width: 100%;
 }
 
 .about-moment h3,
 .actions h3,
 .coments {
   margin-bottom: 1rem;
+}
+
+.comment-container {
+  text-align: left;
+  border-bottom: 1px solid #EFEFEF;
+  padding: 1rem 0;
+}
+
+.comment {
+  font-size: 0.9rem;
+}
+
+.author {
+  font-size: .8rem;
+}
+
+.comment-form {
+  margin-bottom: 3rem;
+}
+
+.comment-form form {
+  margin-top: 1rem;
+  text-align: left;
+  max-width: 300px;
+  margin-left: 0;
+}
+
+.author span {
+  font-weight: bold;
 }
