@@ -43,11 +43,11 @@ export class MomentComponent implements OnInit {
   }
 
   get text(){
-    return this.commentForm.get("text")
+    return this.commentForm.get("text")!
   }
 
   get username(){
-    return this.commentForm.get("username")
+    return this.commentForm.get("username")!
   }
 
   async removeHandler(id: number){
@@ -56,6 +56,23 @@ export class MomentComponent implements OnInit {
     this.messagesService.add("Momento Excluído com sucesso!!!")
 
     this.router.navigate(['/'])
+  }
+
+  async onSubmit(formDirective: FormGroupDirective){
+    if(this.commentForm.invalid) {
+      return
+    }
+
+    const data: Comment = this.commentForm.value
+    data.momentId = Number(this.moment!.id)
+
+    await this.commentService.createComment(data).subscribe((comment) => this.moment!.comments!.push(comment.data))
+
+    this.messagesService.add("Comentário adicionado!")
+
+    this.commentForm.reset()
+
+    formDirective.resetForm()
   }
 
 }
